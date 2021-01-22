@@ -1,0 +1,49 @@
+contentColumnType: string
+fieldGroup: ae27235f-512a-4215-9404-b121dbd54802
+handle: superFilterShowTypes
+instructions: null
+name: 'Show Types'
+searchable: true
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Films
+        -
+          - value
+          - films
+    -
+      __assoc__:
+        -
+          - optgroup
+          - Series
+    -
+      __assoc__:
+        -
+          - label
+          - 'TV Series'
+        -
+          - value
+          - tv-series
+    -
+      __assoc__:
+        -
+          - label
+          - Documentaries
+        -
+          - value
+          - documentaries
+    -
+      __assoc__:
+        -
+          - label
+          - Anime
+        -
+          - value
+          - anime
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

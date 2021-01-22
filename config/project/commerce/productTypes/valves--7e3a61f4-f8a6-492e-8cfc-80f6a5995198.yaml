@@ -1,0 +1,53 @@
+descriptionFormat: ''
+handle: valves
+hasDimensions: false
+hasProductTitleField: true
+hasVariantTitleField: false
+hasVariants: false
+name: Valves
+productFieldLayouts:
+  063adc32-0378-4ba8-b899-4f80a3ff1763:
+    tabs:
+      -
+        elements:
+          -
+            label: Title
+            type: craft\commerce\fieldlayoutelements\ProductTitleField
+          -
+            fieldUid: 6719f22a-cbd9-4fd0-9b36-39ba78405eb8
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 0c994024-9b47-43ec-b914-ba69df49f4ff
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 6ffc0e0e-c90c-45bd-ba43-80de7b865452
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: cecf58d7-89d9-481a-a8c4-98ad1b658ea3
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 92b3c8fe-15c9-4c83-a8b9-9b80de7edeae
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: e42d8ce4-9cbe-4107-a5cb-af483bbcdc31
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: b66fbd6e-bc7d-4dab-b2b6-a10fc0abc570
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: Products
+        sortOrder: 1
+productTitleFormat: ''
+siteSettings:
+  6594f17b-ca55-4234-bc14-b9d16f7eb45b:
+    hasUrls: true
+    template: store/products/_product
+    uriFormat: 'valves/{slug}'
+skuFormat: ''
+titleFormat: '{product.title}'

@@ -1,0 +1,11 @@
+enableVersioning: true
+handle: findADealer
+name: 'Find A Dealer'
+propagationMethod: all
+siteSettings:
+  6594f17b-ca55-4234-bc14-b9d16f7eb45b:
+    enabledByDefault: true
+    hasUrls: true
+    template: pages/findDearlers
+    uriFormat: find-a-dealer
+type: single

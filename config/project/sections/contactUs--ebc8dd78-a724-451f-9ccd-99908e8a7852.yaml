@@ -1,0 +1,11 @@
+enableVersioning: true
+handle: contactUs
+name: 'Contact Us'
+propagationMethod: all
+siteSettings:
+  6594f17b-ca55-4234-bc14-b9d16f7eb45b:
+    enabledByDefault: true
+    hasUrls: true
+    template: pages/contactUs
+    uriFormat: contact-us
+type: single

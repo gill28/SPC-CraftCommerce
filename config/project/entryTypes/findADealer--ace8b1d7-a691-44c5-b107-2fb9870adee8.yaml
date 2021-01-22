@@ -1,0 +1,17 @@
+fieldLayouts:
+  040a41c1-7997-4b05-8a27-f5b0f9027e58:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: 'Dealer Locator'
+            type: craft\fieldlayoutelements\EntryTitleField
+        name: 'Tab 1'
+        sortOrder: 1
+handle: findADealer
+hasTitleField: true
+name: 'Find A Dealer'
+section: 894c873f-bafc-4139-9432-f57d88a6e030
+sortOrder: 1
+titleFormat: '{section.name|raw}'

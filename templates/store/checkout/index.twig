@@ -1,0 +1,99 @@
+{% extends "_layouts/main"  %}
+{% set cart = craft.commerce.carts.cart %}
+{% block main %}
+	<section class="heading-banner-area pt-30">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="heading-banner">
+						<div class="breadcrumbs">
+							<ul>
+								<li>
+									<a href="/">
+										Home
+									</a>
+									<span class="breadcome-separator">
+										>
+									</span>
+								</li>
+								<li>
+									<a href="/store">
+										Store
+									</a>
+									<span class="breadcome-separator">
+										>
+									</span>
+								</li>
+
+								<li>
+									Checkout
+								</li>
+							</ul>
+						</div>
+						<div class="heading-banner-title">
+							<h1>
+								Guest Checkout
+							</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	{% if cart.lineItems | length %}
+
+		<div class="checkout-area mt-20">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="col-md-7">
+							<div class="checkout-form-area">
+								<div class="ceckout-form">
+									<form method="post">
+										<input type="hidden" name="action" value="commerce/cart/update-cart">
+										{{ redirectInput('store/checkout/addresses')}}
+										{{ csrfInput() }}
+
+										<div class="form-fild email" style="float: left">
+											<label for="">
+												Email
+											</label>
+
+											<input type="text" value="{{cart.email}}" name="email" placeholder="email@site.com"/>
+
+										</div>
+										<div class="form-fild" style="max-width: 47%;">
+											<input class="order-btn" type="submit" value="Continue as Guest">
+										</div>
+
+
+									</form>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+{% else %}
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<h2>
+					Nothing to purchase
+				</h2>
+			</div>
+			<div class="col-lg-12">
+				<div class="col-lg-3" style="margin-bottom: 20px;">
+					<a class="button" href="/store">
+						Return to Products
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endif %}{% endblock %}

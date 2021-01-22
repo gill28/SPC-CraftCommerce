@@ -1,0 +1,170 @@
+{% extends "_layouts/main"  %}
+{% block main %}
+	<section class="heading-banner-area pt-30">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="heading-banner">
+						<div class="breadcrumbs">
+							<ul>
+								<li>
+									<a href="/">
+										Home
+									</a>
+									<span class="breadcome-separator">
+										>
+									</span>
+								</li>
+								<li>
+									Contact
+								</li>
+							</ul>
+						</div>
+						<div class="heading-banner-title">
+							<h1>
+								Contact
+							</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="contact-form-area mt-20">
+		<div class="container">
+			<div
+				class="row">
+				<!--Contact Form Start-->
+				<div class="col-lg-7">
+					<div class="contact-form">
+						{{ craft.freeform.form("contactForm").render() }}
+					</div>
+				</div>
+				<!--Contact Form End-->
+				<!--Contact Address Start-->
+				<div class="col-lg-5">
+					<div class="contact-address-info">
+						<div class="contact-form-title">
+							<h2>
+								CONTACT US
+							</h2>
+						</div>
+						<div class="contact-description mb-35">
+							<p>
+								Questions, concerns or comments. We want to hear from you.
+							</p>
+						</br>
+						<p>
+							Contact us if you need help finding a product, have a question about an order or want to discuss a custom part.
+						</p>
+					</div>
+					<div class="contact-address mb-35">
+						<ul>
+							<li>
+								<i class="fa fa-fax"></i>
+								Address : 1019 Concord Street North, South Saint Paul, MN
+
+							</li>
+							<li>
+								<i class="fa fa-phone"></i>
+								<a href="tel:6514554510">
+									Phone: 651-455-4510
+
+								</a>
+
+
+							</li>
+							<li>
+								<i class="fa fa-envelope-o"></i>
+								<a href="mailto:info@spcbrass.com">
+									info@spcbrass.com
+								</a>
+
+
+							</li>
+						</ul>
+					</div>
+					<div class="woring-hours mb-35">
+						<h3>
+							<strong>
+								Working hours
+							</strong>
+						</h3>
+						<p>
+							<strong>
+								Monday – Saturday
+							</strong>
+							:  8AM – 5PM
+						</p>
+					</div>
+				</div>
+			</div>
+			<!--Contact Address End-->
+		</div>
+	</div>
+</section>
+<section class="frequently-question mt-20">
+	<div class="container">
+		<div
+			class="row">
+			<!--Frequently Content Start-->
+			<div class="col-lg-12">
+				<div class="frequently-content mb-50">
+					<div class="frequently-title">
+
+						<p>
+							{{entry.aboutContent}}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div class="brand-area ptb-30 white-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div
+						class="brand-active owl-carousel">
+						<!--Single Brand Start-->
+						<div class="single-brand img-full">
+							<a href="#">
+								<img src="img/brand/1.png" alt="">
+							</a>
+						</div>
+						<!--Single Brand End-->
+						<!--Single Brand Start-->
+						<div class="single-brand img-full">
+							<a href="#">
+								<img src="img/brand/2.png" alt="">
+							</a>
+						</div>
+						<!--Single Brand End-->
+						<!--Single Brand Start-->
+						<div class="single-brand img-full">
+							<a href="#">
+								<img src="img/brand/3.png" alt="">
+							</a>
+						</div>
+						<!--Single Brand End-->
+						<!--Single Brand Start-->
+						<div class="single-brand img-full">
+							<a href="#">
+								<img src="img/brand/4.png" alt="">
+							</a>
+						</div>
+						<!--Single Brand End-->
+						<!--Single Brand Start-->
+						<div class="single-brand img-full">
+							<a href="#">
+								<img src="img/brand/5.png" alt="">
+							</a>
+						</div>
+						<!--Single Brand End-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

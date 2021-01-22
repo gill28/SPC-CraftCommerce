@@ -1,0 +1,29 @@
+fieldLayouts:
+  ae74dde1-f6a4-40e3-9155-80af36ebd9c1:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: Homepage
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: f74d51ba-6c3b-417b-bb06-34106cb1592f
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 9426cab1-2d05-4f7c-86d9-a1b1c663ec65
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: dfda25ef-e7b9-4eb5-90b8-7f919a0d2138
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: Wysiwig
+        sortOrder: 1
+handle: home
+hasTitleField: true
+name: Home
+section: d731608c-5844-43d6-a299-071d0d196b14
+sortOrder: 1
+titleFormat: '{section.name|raw}'

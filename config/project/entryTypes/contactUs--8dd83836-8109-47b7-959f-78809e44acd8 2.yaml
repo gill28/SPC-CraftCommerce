@@ -1,0 +1,21 @@
+fieldLayouts:
+  eb4251fc-58a9-4696-8819-f92d354d1fe0:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: Title
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: dfda25ef-e7b9-4eb5-90b8-7f919a0d2138
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: 'Tab 1'
+        sortOrder: 1
+handle: contactUs
+hasTitleField: true
+name: 'Contact Us'
+section: ebc8dd78-a724-451f-9ccd-99908e8a7852
+sortOrder: 1
+titleFormat: ''

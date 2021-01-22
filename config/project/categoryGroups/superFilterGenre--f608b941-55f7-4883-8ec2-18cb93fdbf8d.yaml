@@ -1,0 +1,10 @@
+handle: superFilterGenre
+name: Genre
+siteSettings:
+  6594f17b-ca55-4234-bc14-b9d16f7eb45b:
+    hasUrls: false
+    template: null
+    uriFormat: null
+structure:
+  maxLevels: null
+  uid: 49477a32-8c52-4279-90e2-57c251714208

@@ -1,0 +1,7 @@
+handle: shop
+hasTitleField: false
+name: Shop
+section: ae21bccb-089b-4bf0-b901-0268c666c6a8
+sortOrder: 1
+titleFormat: '{section.name|raw}'
+titleLabel: null

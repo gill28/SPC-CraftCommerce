@@ -1,0 +1,310 @@
+{% extends "_layouts/main"  %}
+{% block main %}
+	{% set countries = craft.commerce.countries.allEnabledCountriesAsList %}
+	{% set states = craft.commerce.states.allEnabledStates %}
+	<div class="checkout-area mt-20">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="checkout-form-area">
+						<div class="checkout-title">
+							<h3>
+								Billing Address
+							</h3>
+						</div>
+						<div class="ceckout-form">
+							<form method="post">
+								<input type="hidden" name="action" value="commerce/cart/update-cart">
+								{{ redirectInput('store/checkout/shipping')}}
+								{{ csrfInput() }}
+								<div class="billing-fields">
+									<div class="form-fild first-name">
+										<p>
+											<label>
+												First name
+												<span class="required">
+													*
+												</span>
+											</label>
+										</p>
+										<input type="text" placeholder="" name="billingAddress[firstName]">
+									</div>
+									<div class="form-fild last-name">
+										<p>
+											<label>
+												Last name
+												<span class="required">
+													*
+												</span>
+											</label>
+										</p>
+										<input type="text" placeholder="" name="billingAddress[lastName]" value="">
+									</div>
+									<div class="form-fild company-name">
+										<p>
+											<label>
+												Company Name
+											</label>
+										</p>
+										<input type="text" placeholder="" name="billingAddress[businessName]" value="">
+									</div>
+									<div class="form-fild country">
+										<p>
+											<label for="billingAddress-state">
+												Country
+												<span class="required">
+													*
+												</span>
+											</label>
+										</p>
+										<select name="billingAddress[countryId]">
+											<option value="">
+												Select a Country...
+											</option>
+											{% for key, option in countries %}
+												<option value="{{key}}">
+											{{ option }}
+										</option>
+									{% endfor %}
+									<div>
+										<b></b>
+									</div>
+
+								</select>
+							</div>
+							<div class="form-fild billing_address_1">
+								<p>
+									<label>
+										Street address
+										<span class="required">
+											*
+										</span>
+									</label>
+								</p>
+								<input type="text" placeholder="House number and street name" name="billingAddress[address1]" value="">
+							</div>
+							<div class="form-fild billing_address_2">
+								<input type="text" placeholder="Apartment, suite, unit etc. (optional)" name="billingAddress[address2]" value="">
+							</div>
+							<div class="form-fild billing_postcode">
+								<p>
+									<label>
+										Postcode / ZIP
+										<span class="required">
+											*
+										</span>
+									</label>
+								</p>
+								<input type="text" placeholder="" name="billingAddress[zipCode]" value="">
+							</div>
+							<div class="form-fild billing_city">
+								<p>
+									<label>
+										City
+										<span class="required">
+											*
+										</span>
+									</label>
+								</p>
+								<input type="text" placeholder="" name="billingAddress[city]" value="">
+							</div>
+							<div class="form-fild billing_city">
+								<p>
+									<label>
+										State
+										<span class="required">
+											*
+										</span>
+									</label>
+								</p>
+								<select>
+									<option value="">
+										Select a State...
+									</option>
+									{% for stateId, stateName in states %}
+										<option value="{{stateId}}">
+											{{stateName}}
+										</option>
+									{% endfor %}
+								</select>
+
+							</div>
+
+							<div class="form-fild billing_phone">
+								<p>
+									<label>
+										Phone
+										<span class="required">
+											*
+										</span>
+									</label>
+								</p>
+								<input type="text" placeholder="" name="billingAddress[phone]" value="">
+							</div>
+
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			<div class="col-md-6">
+			<div class="checkout-form-area">
+						<div class="checkout-title">
+							<h3>
+								Shipping Address
+							</h3>
+						</div>
+						<div class="ceckout-form">
+							<form method="post">
+								<input type="hidden" name="action" value="commerce/cart/update-cart">
+								{{ redirectInput('store/checkout/shipping')}}
+								{{ csrfInput() }}
+								<div class="billing-fields">
+									<div class="form-fild first-name">
+										<p>
+											<label>
+												First name
+												<span class="required">
+													*
+												</span>
+											</label>
+										</p>
+										<input type="text" placeholder="" name="shippingAddress[firstName]">
+									</div>
+									<div class="form-fild last-name">
+										<p>
+											<label>
+												Last name
+												<span class="required">
+													*
+												</span>
+											</label>
+										</p>
+										<input type="text" placeholder="" name="shippingAddress[lastName]" value="">
+									</div>
+									<div class="form-fild company-name">
+										<p>
+											<label>
+												Company Name
+											</label>
+										</p>
+										<input type="text" placeholder="" name="shippingAddress[businessName]" value="">
+									</div>
+									<div class="form-fild country">
+										<p>
+											<label for="shippingAddress-state">
+												Country
+												<span class="required">
+													*
+												</span>
+											</label>
+										</p>
+										<select name="shippingAddress[countryId]">
+											<option value="">
+												Select a Country...
+											</option>
+											{% for key, option in countries %}
+												<option value="{{key}}">
+												{{ option }}
+											</option>
+										{% endfor %}
+										<div>
+											<b></b>
+										</div>
+
+									</select>
+								</div>
+								<div class="form-fild billing_address_1">
+									<p>
+										<label>
+											Street address
+											<span class="required">
+												*
+											</span>
+										</label>
+									</p>
+									<input type="text" placeholder="House number and street name" name="shippingAddress[address1]" value="">
+								</div>
+								<div class="form-fild billing_address_2">
+									<input type="text" placeholder="Apartment, suite, unit etc. (optional)" name="shippingAddress[address2]" value="">
+								</div>
+								<div class="form-fild billing_postcode">
+									<p>
+										<label>
+											Postcode / ZIP
+											<span class="required">
+												*
+											</span>
+										</label>
+									</p>
+									<input type="text" placeholder="" name="shippingAddress[zipCode]" value="">
+								</div>
+								<div class="form-fild billing_city">
+									<p>
+										<label>
+											City
+											<span class="required">
+												*
+											</span>
+										</label>
+									</p>
+									<input type="text" placeholder="" name="shippingAddress[city]" value="">
+								</div>
+								<div class="form-fild billing_city">
+									<p>
+										<label>
+											State
+											<span class="required">
+												*
+											</span>
+										</label>
+									</p>
+									<select>
+										<option value="">
+											Select a State...
+										</option>
+										{% for stateId, stateName in states %}
+											<option value="{{stateId}}">
+												{{stateName}}
+											</option>
+										{% endfor %}
+									</select>
+
+								</div>
+
+								<div class="form-fild billing_phone">
+									<p>
+										<label>
+											Phone
+											<span class="required">
+												*
+											</span>
+										</label>
+									</p>
+									<input type="text" placeholder="" name="shippingAddress[phone]" value="">
+								</div>
+
+							</div>
+							<div class="additional-fields">
+								<div class="order-notes">
+									<div class="form-fild order-name">
+										<p>
+											<label>
+												Order notes
+											</label>
+										</p>
+										<textarea name="shippingAddress[notes]" id="checkout-mess" placeholder="Notes about your order, e.g. special notes for delivery." rows="2" cols="5"></textarea>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-5">
+								<input type="submit" class="order-btn" value="Save Address"/>
+							</div>
+
+						</form>
+					</div>
+			</div>
+			<!--Checkout Area End-->
+		</div>
+	</div>
+</div>{% endblock %}

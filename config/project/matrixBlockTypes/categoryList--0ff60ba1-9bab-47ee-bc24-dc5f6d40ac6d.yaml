@@ -1,0 +1,81 @@
+field: 2f21f42c-92d4-48ac-a559-c83bd2fa364a
+fieldLayouts:
+  fe0cb40b-2676-4866-87a0-5369b88d16a1:
+    tabs:
+      -
+        fields:
+          085eca26-a7a7-4c45-9bf9-c4972422bff0:
+            required: false
+            sortOrder: 2
+          6dcdf4ed-0a98-42eb-b3b1-bfd76f611eaa:
+            required: false
+            sortOrder: 3
+          ac62dcca-321e-485d-820a-dc3451734e61:
+            required: false
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  085eca26-a7a7-4c45-9bf9-c4972422bff0:
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: linkUrl
+    instructions: ''
+    name: 'Link Url'
+    searchable: true
+    settings:
+      maxLength: '255'
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+  6dcdf4ed-0a98-42eb-b3b1-bfd76f611eaa:
+    contentColumnType: string
+    fieldGroup: null
+    handle: linkImage
+    instructions: ''
+    name: 'Link Image'
+    searchable: true
+    settings:
+      allowedKinds: null
+      defaultUploadLocationSource: 'volume:70a7bb30-1282-40bc-bd73-83702d8a3b7b'
+      defaultUploadLocationSubpath: ''
+      limit: ''
+      localizeRelations: false
+      restrictFiles: ''
+      selectionLabel: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:70a7bb30-1282-40bc-bd73-83702d8a3b7b'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources:
+        - 'volume:b6bbfa99-c1be-4392-8c70-462f32b2df35'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: ''
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  ac62dcca-321e-485d-820a-dc3451734e61:
+    contentColumnType: text
+    fieldGroup: null
+    handle: linkTitle
+    instructions: ''
+    name: 'Link Title'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: categoryList
+name: 'Category List'
+sortOrder: 1

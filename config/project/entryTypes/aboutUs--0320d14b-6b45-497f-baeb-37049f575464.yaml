@@ -1,0 +1,29 @@
+fieldLayouts:
+  b71a8de9-1ffe-4112-af71-31aa8eda519d:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: 'About Us'
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: 9426cab1-2d05-4f7c-86d9-a1b1c663ec65
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: dfda25ef-e7b9-4eb5-90b8-7f919a0d2138
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: ddea360f-0ff8-4853-82cd-08643c3733a1
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: 'About Us'
+        sortOrder: 1
+handle: aboutUs
+hasTitleField: true
+name: 'About Us'
+section: a3a2f422-fe69-4ec4-a304-5c8a5a9fa16e
+sortOrder: 1
+titleFormat: '{section.name|raw}'

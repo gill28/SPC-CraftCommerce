@@ -1,0 +1,569 @@
+{% extends "_layouts/main" %}
+
+{% block main %}
+
+	{% set products = craft.products().type('valves')
+	    .asArray().all() %}
+
+	<style>
+		.item-col2 {
+			margin-top: 0;
+		}
+	</style>
+	<div class="wrapper">
+		<div class="heading-banner-area pt-30">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="heading-banner">
+							<div class="breadcrumbs">
+								<ul>
+									<li>
+										<a href="/">
+											Home
+										</a>
+										<span class="breadcome-separator">
+											>
+										</span>
+									</li>
+									<li>
+										Shop
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--Heading Banner Area End-->
+		<!--Product List Grid View Area Start-->
+		<div class="product-list-grid-view-area mt-20">
+
+			<div class="container">
+
+				<div
+					class="row">
+					<!--Shop Product Area Start-->
+					<div class="col-lg-9 order-lg-2 order-1">
+						<div class="shop-tab-menu">
+							<div
+								class="row">
+								<!--List & Grid View Menu Start-->
+								<div class="col-lg-5 col-md-5 col-xl-6 col-12">
+									<div class="shop-tab">
+										<ul class="nav">
+											<li>
+												<a class="active" data-toggle="tab" href="#grid-view">
+													<i class="ion-android-apps"></i>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!--List & Grid View Menu End-->
+								<!-- View Mode Start-->
+								<div class="col-lg-7 col-md-7 col-xl-6 col-12">
+
+									<div class="show-result">
+										<p>
+
+											{{products | length}}
+											results
+										</p>
+									</div>
+								</div>
+								<!-- View Mode End-->
+							</div>
+						</div>
+						<!--Shop Tab Menu End-->
+						<!--Shop Product Area Start-->
+						<div class="shop-product-area">
+							<div
+								class="tab-content">
+								<!--Grid View Start-->
+								<div id="grid-view" class="tab-pane fade show active">
+									<div class="row product-container">
+
+										<div
+											class="col-lg-12 col-md-3 item-col2 grid">
+
+
+											<!--Single Product Start-->
+											{% for product in products %}
+												{# {% dd(product) %} #}
+												<div class="col-lg-3 single-product grid-item {{product.field_category | replace({' ' : ''}) }} category-{{product.field_subCategory | replace({' ' : ''}) | lower }}">
+
+													<div class="product-img">
+
+														<a href="/{{product.uri}}">
+															<img class="first-img" src="{{siteUrl}}images/{{product.field_imageFileName}}.jpg" alt="{{product.field_productTitle}}">
+														</a>
+													</div>
+													<div class="product-content">
+														<h2>
+
+															<a href="/{{product.uri}}">
+																{{ product.field_productTitle}}
+															</br>
+															{{ product.field_subCategory}}
+														</a>
+													</h2>
+													<p>{{ product.field_productDescription|slice(0,40) ~ '...'}}</p>
+													<span class="new-price">
+														{{product.defaultPrice | currency('USD')}}
+
+													</span>
+													{% set variant = product.defaultVariantId %}
+
+													<form method="POST">
+														<input type="hidden" name="action" value="commerce/cart/update-cart">
+														<input type="hidden" name="cartUpdatedNotice" value="added {{product.title}} to the cart">
+														{{ redirectInput('store/cart') }}
+														{{ csrfInput() }}
+														<input type="hidden" name="qty" value="1">
+														<input type="hidden" name="purchasableId" value="{{variant}}">
+														<input type="submit" class="button" value="Add to Cart">
+													</form>
+
+
+												</div>
+											</div>
+
+											<!--Single Product End-->
+										{% endfor %}
+
+									</div>
+
+								</div>
+
+							</>
+						</div>
+					</div>
+				</div>
+				<!--Shop Product Area End-->
+				<!--Pagination Start-->
+				<div class="pagination pb-10" style="visibility: hidden;"></div>
+
+				<!--Pagination End-->
+			</div>
+			<!--Shop Product Area End-->
+			<!--Left Sidebar Start-->
+			<div
+				class="col-lg-3 order-lg-1 order-2 ">
+				<!--Widget Shop Categories start-->
+				<div class="widget widget-shop-categories">
+					<h3 class="widget-shop-title">
+						Shop By Categories
+					</h3>
+					<div id="accordion">
+						<div class="card">
+							<div class="card-header" id="headingOne">
+								<h5 class="mb-0">
+									<a href="/store/products/category/bells/" class="btn btn-link">
+										Bells
+									</a>
+								</h5>
+							</div>
+							<div id="collapseOne" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+								<div class="card-body">
+									<li>
+										<a href="#" id="bell-parts" class="cat-link" data-filter=".category-BellParts">
+											Bell Parts
+										</a>
+									</li>
+									<li>
+										<a href="#" id="fire-bell-assembly" class="cat-link" data-filter=".category-FireBellAssembly">
+											Fire Bell Assembly
+										</a>
+									</li>
+									<li>
+										<a href="#" id="bell-miscellaneous" class="cat-link" data-filter=".category-Miscellaneous">
+											Miscellaneous
+										</a>
+									</li>
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-header" id="headingTwo">
+								<h5 class="mb-0">
+									<a href="/store/products/category/threadedParts/" class="btn btn-link">
+
+										Adapters
+									</a>
+								</h5>
+							</div>
+							<div id="collapseTwo" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+								<div class="card-body">
+
+									<li>
+										<a href="#" class="cat-link female-to-male-rockerlug">
+											Female to Male Rockerlug
+										</a>
+									</li>
+
+									<li>
+										<a href="#" class="cat-link barrel-strainers">
+											Barrel Strainers
+										</a>
+									</li>
+
+									<li>
+										<a href="#" class="cat-link adapters-double-female">
+											Double Female
+										</a>
+									</li>
+
+									<li>
+										<a href="#" class="cat-link adapters-double-male">
+											Double Male
+										</a>
+									</li>
+
+									<li>
+										<a href="#" class="cat-link three-piece-double-female">
+											Three Piece Double Female
+										</a>
+									</li>
+
+									<li>
+										<a href="#" class="cat-link female-mounting-plate">
+											Female Mounting Plate
+										</a>
+									</li>
+
+									<li>
+										<a href="#" class="cat-link swivels">
+											Swivels
+										</a>
+									</li>
+
+									<li>
+										<a href="#" class="cat-link">
+											Hydrant Conversion Bushing
+										</a>
+									</li>
+
+									<li>
+										<a href="#" class="cat-link">
+											Double Male Hex
+										</a>
+									</li>
+
+									<li>
+										<a href="#" class="cat-link">
+											Female to Male Hex
+										</a>
+									</li>
+
+									<li>
+										<a href="#" class="cat-link">
+											Female to Male Internal Lug
+										</a>
+									</li>
+
+									<li>
+										<a href="#" class="cat-link">
+											Female to Male Long handle
+										</a>
+									</li>
+
+									<li>
+										<a href="#" class="cat-link">
+											Plain Siamese
+										</a>
+									</li>
+
+									<li>
+										<a href="#" class="cat-link">
+											Plain Wyes
+										</a>
+									</li>
+
+									<li>
+										<a href="#" class="cat-link">
+											Female Swivel to Male
+										</a>
+									</li>
+
+									<li>
+										<a href="#" class="cat-link">
+											Female Swivel to Female
+										</a>
+									</li>
+
+									<li>
+										<a href="#" class="cat-link">
+											Storz Couplings
+										</a>
+									</li>
+
+									<li>
+										<a href="#" class="cat-link">
+											Washers
+										</a>
+									</li>
+
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-header" id="headingThree">
+								<h5 class="mb-0">
+									<a href="/store/products/category/truckHardware/" class="btn btn-link">
+
+										Truck Hardware
+									</a>
+								</h5>
+							</div>
+							<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+								<div class="card-body">
+									<li>
+										<a href="#" class="cat-link">
+											Gaskets
+										</a>
+									</li>
+									<li>
+										<a href="#" class="cat-link">
+											Miscellaneous
+										</a>
+									</li>
+
+									<li>
+										<a href="#" class="cat-link">
+											Wrenches
+										</a>
+									</li>
+
+									<li>
+										<a href="#" class="cat-link">
+											Tool Holder
+										</a>
+									</li>
+
+									<li>
+										<a href="#" class="cat-link">
+											Handrail Mount
+										</a>
+									</li>
+
+									<li>
+										<a href="#" class="cat-link">
+											Body
+										</a>
+									</li>
+
+									<li>
+										<a href="#" class="cat-link">
+											Steps
+										</a>
+									</li>
+
+									<li>
+										<a href="#" class="cat-link">
+											Tool Hardware
+										</a>
+									</li>
+
+									<li>
+										<a href="#" class="cat-link">
+											Quicloc Mounting Plate
+										</a>
+									</li>
+
+									<li>
+										<a href="#" class="cat-link">
+											Male Mounting Plate
+										</a>
+									</li>
+
+									<li>
+										<a href="#" class="cat-link">
+											Wrenches Miscellaneous
+										</a>
+									</li>
+
+									<li>
+										<a href="#" class="cat-link">
+											Tool Mounting
+										</a>
+									</li>
+
+
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-header" id="headingThree">
+								<h5 class="mb-0">
+									<a href="/store/products/category/elbows/" class="btn btn-link">
+
+										Elbows
+									</a>
+								</h5>
+							</div>
+							<div id="collapseFour" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+								<div class="card-body">
+									<li>
+										<a href="#" class="cat-link">
+											Hydrant Flushing
+										</a>
+									</li>
+									<li>
+										<a href="#" class="cat-link">
+											Miscellaneous
+										</a>
+									</li>
+
+									<li>
+										<a href="#" class="cat-link">
+											By Degree
+										</a>
+									</li>
+
+
+								</div>
+							</div>
+						</div>
+
+						<div class="card">
+							<div class="card-header" id="headingThree">
+								<h5 class="mb-0">
+									<a href="/store/products/category/capsPlugs/" class="btn btn-link">
+
+										Caps & Plugs
+									</a>
+								</h5>
+							</div>
+							<div id="collapseFive" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+								<div class="card-body">
+									<li>
+										<a href="#" class="cat-link">
+											Rockerlug with Chain
+										</a>
+									</li>
+
+									<li>
+										<a href="#" class="cat-link">
+											Hydrant
+										</a>
+									</li>
+
+									<li>
+										<a href="#" class="cat-link">
+											Rockerlug without Chain
+										</a>
+									</li>
+
+									<li>
+										<a href="#" class="cat-link">
+											Long Handle Domed Style
+										</a>
+									</li>
+
+								</div>
+							</div>
+						</div>
+
+						<div class="card">
+							<div class="card-header" id="headingThree">
+								<h5 class="mb-0">
+									<a href="/store/products/category/valves/" class="btn btn-link">
+
+										Valves
+									</a>
+								</h5>
+							</div>
+							<div id="collapseSix" aria-labelledby="headingThree" data-parent="#accordion">
+								<div class="card-body">
+									<li>
+										<a href="#" id="butterflyValve" class="cat-link" data-filter=".category-butterflyvalvemiscellaneous">
+											Butterfly Valve Miscellaneous
+										</a>
+									</li>
+
+									<li>
+										<a href="#" id="butterflywHandle" class="cat-link" data-filter=".category-butterflywithleverhandle">
+											Butterfly With Lever Handle
+										</a>
+									</li>
+
+									<li>
+										<a href="#" id="butterflyWGear" class="cat-link" data-filter=".category-butterflywithgearoperatedhandwheel">
+
+											Butterfly With Gear Operated Handwheel
+										</a>
+									</li>
+
+									<li>
+										<a href="#" id="flangesOnly" class="cat-link" data-filter=".category-flangesonly">
+
+											Flanges Only
+										</a>
+									</li>
+
+									<li>
+										<a href="#" id="drainValveParts" class="cat-link" data-filter=".category-drainvalveparts">
+
+											Drain Valve Parts
+										</a>
+									</li>
+
+									<li>
+										<a href="#" id="drainValves" class="cat-link" data-filter=".category-drainvalves">
+
+											Drain Valves
+										</a>
+									</li>
+
+								</div>
+							</div>
+						</div>
+
+						<div class="card">
+							<div class="card-header" id="headingThree">
+								<h5 class="mb-0">
+									<a href="/store/products/category/miscellaneous/" class="btn btn-link">
+
+										Miscellaneous
+									</a>
+								</h5>
+							</div>
+							<div id="collapseSeven" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+								<div class="card-body">
+									<li>
+										<a href="#" class="cat-link">
+											Swivel Parts
+										</a>
+									</li>
+
+									<li>
+										<a href="#" class="cat-link">
+											Chain
+										</a>
+									</li>
+
+									<li>
+										<a href="#" class="cat-link">
+											Screens
+										</a>
+									</li>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+<!--Product List Grid View Area End-->
+
+
+{% js %}
+
+{% endjs %}{% endblock %}

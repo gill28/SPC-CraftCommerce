@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: d6e24626-103e-4b06-a89c-3aae261c6cc0
+handle: categoriesList
+instructions: ''
+name: 'Categories List'
+searchable: true
+settings:
+  contentTable: '{{%matrixcontent_categorieslist}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

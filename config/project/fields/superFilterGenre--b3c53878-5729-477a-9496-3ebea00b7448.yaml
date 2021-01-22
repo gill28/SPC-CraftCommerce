@@ -1,0 +1,21 @@
+contentColumnType: string
+fieldGroup: ae27235f-512a-4215-9404-b121dbd54802
+handle: superFilterGenre
+instructions: null
+name: Genre
+searchable: true
+settings:
+  allowLimit: false
+  allowMultipleSources: false
+  branchLimit: null
+  limit: null
+  localizeRelations: false
+  selectionLabel: null
+  source: 'group:f608b941-55f7-4883-8ec2-18cb93fdbf8d'
+  sources: '*'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Categories

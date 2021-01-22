@@ -1,0 +1,17 @@
+contentColumnType: text
+fieldGroup: ece0e55a-280c-4dcd-92cd-153c182a099f
+handle: partNumber
+instructions: ''
+name: 'Part Number'
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

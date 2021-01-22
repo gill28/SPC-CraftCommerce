@@ -1,0 +1,16 @@
+fieldLayouts:
+  242f28c2-f503-4dab-b810-9c5dc4a8a65a:
+    tabs:
+      -
+        name: 'Customer Address'
+        sortOrder: 1
+handle: dealerLocationInformation
+name: 'Dealer Location Information'
+siteSettings:
+  6594f17b-ca55-4234-bc14-b9d16f7eb45b:
+    hasUrls: true
+    template: ''
+    uriFormat: 'dealer-location-information/{slug}'
+structure:
+  maxLevels: null
+  uid: add486c2-42af-4315-b918-d371ff5dacc0

@@ -1,0 +1,11 @@
+enableVersioning: true
+handle: superFilterShows
+name: Shows
+propagationMethod: all
+siteSettings:
+  6594f17b-ca55-4234-bc14-b9d16f7eb45b:
+    enabledByDefault: true
+    hasUrls: true
+    template: null
+    uriFormat: 'super-filter-shows/{slug}'
+type: channel

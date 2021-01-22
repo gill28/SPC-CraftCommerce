@@ -1,0 +1,18 @@
+fieldLayouts:
+  0d1499ab-9927-4bc1-958b-1893eb0d5b6f:
+    tabs:
+      -
+        fields:
+          2f21f42c-92d4-48ac-a559-c83bd2fa364a:
+            required: false
+            sortOrder: 1
+        name: 'Tab 1'
+        sortOrder: 1
+handle: categories
+hasUrls: true
+name: Categories
+settings:
+  path: '@assetsBasePath/categories/'
+sortOrder: 3
+type: craft\volumes\Local
+url: '@web/categories/'

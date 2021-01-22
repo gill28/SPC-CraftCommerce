@@ -1,0 +1,17 @@
+contentColumnType: text
+fieldGroup: ae27235f-512a-4215-9404-b121dbd54802
+handle: superFilterDescription
+instructions: null
+name: Description
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: text
+  initialRows: 4
+  multiline: true
+  placeholder: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText
